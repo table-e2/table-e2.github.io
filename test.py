@@ -21,9 +21,24 @@ collabels = [
     'SomeNum',
     'Zero'
 ]
+weekdays = [
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
+    'Sun'
+]
+def pweek(days):
+    for weekday,day in zip(weekdays,days):
+        print(f'{weekday}: {day}')
 
 import sys
-for _ in range(1000):
+import itertools as it
+for counter in it.count(1):
+    if counter % 1000 == 0:
+        pweek(days)
     row = sys.stdin.readline()
     if not row:
         break
@@ -43,15 +58,4 @@ for _ in range(1000):
     dayofweek = rowtime.weekday()
     days[dayofweek] += items['Total_Count']
 
-weekdays = [
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-    'Sun'
-]
-
-for weekday,day in zip(weekdays,days):
-    print(f'{weekday}: {day}')
+pweek(days)
