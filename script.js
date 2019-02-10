@@ -1,15 +1,55 @@
 
-var addOpts = function(id, num, interval) {
+var addOpts = function(id, num, labels) {
     for (let i = 0; i < num; i++) {
         let node = document.createElement('option')
-        let txtnode = document.createTextNode(i * interval)
+        let txtnode = document.createTextNode(labels[i])
         node.appendChild(txtnode)
         document.getElementById(id).appendChild(node)
     }
 };
-addOpts('weekday', 7, 1);
-addOpts('hour', 24, 1);
-addOpts('minute', 6, 10);
+addOpts('weekday', 7, [
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
+    'Sun',
+]);
+addOpts('hour', 24, [
+    '00',
+    '01',
+    '02',
+    '03',
+    '04',
+    '05',
+    '06',
+    '07',
+    '08',
+    '09',
+    '10',
+    '11',
+    '12',
+    '13',
+    '14',
+    '15',
+    '16',
+    '17',
+    '18',
+    '19',
+    '20',
+    '21',
+    '22',
+    '23',
+]);
+addOpts('minute', 6, [
+    '00',
+    '10',
+    '20',
+    '30',
+    '40',
+    '50',
+]);
 
 fetch('building_list.json')
     .then(function(resp) {
