@@ -66,7 +66,13 @@ def indextotime(index):
     day = index // (24 * 6)
     return day, hour, minute * 10
 
+timeranks = {}
 import itertools as it
-for build,times in buildings.items():
-    maxcount,index = min(zip(times, it.count()))
-    print(build, maxcount, indextotime(index))
+for build,counts in buildings.items():
+    sortedtimes = sorted(zip(counts,it.count()))
+    timeranks[build] = [(index,counts) for counts,index in sortedtimes]
+
+for index in range(7*24*6):
+    bestbuild,bestcounts = max(timeranks.items(), key=lambda buildcounts: buildcounts[1][index])
+    bestcount = bestcounts[index]
+    print(indextotime(index), bestbuild, bestcount)
