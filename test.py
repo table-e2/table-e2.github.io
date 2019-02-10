@@ -39,7 +39,7 @@ import sys
 import itertools as it
 for counter in it.count(1):
     if counter % 10000 == 0:
-        pweek(days, counter)
+        print(f'Checked {counter} lines.   ', end='\r')
     row = sys.stdin.readline()
     if not row:
         break
