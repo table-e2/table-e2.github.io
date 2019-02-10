@@ -30,7 +30,8 @@ weekdays = [
     'Sat',
     'Sun'
 ]
-def pweek(days):
+def pweek(days, counter):
+    print(f'Checked {counter} rows.')
     for weekday,day in zip(weekdays,days):
         print(f'{weekday}: {day}')
 
@@ -38,7 +39,7 @@ import sys
 import itertools as it
 for counter in it.count(1):
     if counter % 10000 == 0:
-        pweek(days)
+        pweek(days, counter)
     row = sys.stdin.readline()
     if not row:
         break
@@ -58,4 +59,4 @@ for counter in it.count(1):
     dayofweek = rowtime.weekday()
     days[dayofweek] += items['Total_Count']
 
-pweek(days)
+pweek(days, counter)
