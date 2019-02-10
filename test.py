@@ -2,7 +2,6 @@
 # client = PIWebApiClient("https://ucd-pi-iis.ou.ad3.ucdavis.edu/piwebapi", useKerberos=False, username="username", password="password", verifySsl=True)
 # print(client)
 
-import csv
 from datetime import datetime as dt
 
 collabels = [
