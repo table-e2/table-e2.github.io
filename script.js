@@ -70,6 +70,8 @@ fetch('data.json')
     .then(function(response) {
         return response.json();
     }).then(function(data) {
+        document.getElementById('result').innerHTML = '';
+        
         let button = document.getElementById('submit')
         button.onclick = function() {
             let bldg = document.getElementById('building').value;
@@ -82,13 +84,15 @@ fetch('data.json')
             index += parseInt(hour) * 6;
             index += parseInt(minute);
             // result = document.createTextNode(data[bldg][index]);
-            document.getElementById('result').innerHTML = 'Historical devices: ' + data[bldg][index];
+            let days = 249 / 7;
+            let devices = (data[bldg][index] / days).toFixed(1);
+            document.getElementById('result').innerHTML = 'Historical devices: ' + devices;
             let sum = 0;
             for (count of data[bldg]) {
                 sum += count;
             }
-            let average = sum / data[bldg].length;
-            let factor = data[bldg][index] / average;
+            let average = sum / data[bldg].length / days;
+            let factor = devices / average;
             document.getElementById('deets').innerHTML = 'This building usually has ' + average.toFixed(1) + 
                 ' devices. It is ' + factor.toFixed(2) + ' times average.';
         };
