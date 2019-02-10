@@ -74,5 +74,5 @@ for build,counts in buildings.items():
 
 for index in range(7*24*6):
     bestbuild,bestcounts = max(timeranks.items(), key=lambda buildcounts: buildcounts[1][index])
-    bestcount = bestcounts[index]
-    print(indextotime(index), bestbuild, indextotime(bestcount))
+    ranking,count = bestcounts[index]
+    print(indextotime(index), bestbuild, ranking, count)
