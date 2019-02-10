@@ -38,8 +38,8 @@ import itertools as it
 days = [0] * 7
 hours = [0] * 24
 minutes = [0] * 6
-from collections import defaultdict as dd
-buildings = dd(lambda: 0)
+from collections import Counter
+buildings = Counter()
 for counter in it.count(1):
     if counter % 10000 == 0:
         print(f'Checked {counter} lines.   ', end='\r')
@@ -76,5 +76,5 @@ plabel([f'{n:02}:00' for n in range(24)], hours)
 print()
 plabel([f'0:{n}0' for n in range(6)], minutes)
 print()
-for build,count in buildings.items():
-    print(f'{build} : {count:,}')
+for i,(build,count) in enumerate(buildings.most_common()):
+    print(f'{i + 1}. {build} : {count:,}')
