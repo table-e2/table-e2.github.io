@@ -54,10 +54,10 @@ try:
     with open('pkl/buildings.pkl', 'rb') as f:
         buildings = pickle.load(f)
 except FileNotFoundError:
+    if not os.path.exists('pkl'):
+        os.mkdir('pkl')
     with open('pkl/buildings.pkl', 'wb') as f:
         buildings = createdata()
-        if not os.path.exists('pkl'):
-            os.mkdir('pkl')
         pickle.dump(buildings, f)
 
 def indextotime(index):
