@@ -68,5 +68,5 @@ def indextotime(index):
 
 import json
 
-with open('data.json', 'wb') as datafile:
+with open('data.json', 'w') as datafile:
     json.dump(buildings, datafile)
