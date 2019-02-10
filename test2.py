@@ -11,10 +11,12 @@ for key in data['Items']:
     # print(newurl)
     req = urlopen(newurl)
     selected = json.load(req)
-    last = selected['Items'][0]['Items'][-1]['Value']
     try:
+        last = selected['Items'][0]['Items'][-1]['Value']
         val = int(last)
         print(key['Name'], end=' ')
         print(val)
     except ValueError:
+        pass
+    except IndexError:
         pass
