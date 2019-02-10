@@ -82,7 +82,7 @@ fetch('data.json')
             index += parseInt(hour) * 6;
             index += parseInt(minute);
             // result = document.createTextNode(data[bldg][index]);
-            document.getElementById('result').innerHTML = data[bldg][index];
+            document.getElementById('result').innerHTML = 'Historical devices: ' + data[bldg][index];
             let sum = 0;
             for (count of data[bldg]) {
                 sum += count;
