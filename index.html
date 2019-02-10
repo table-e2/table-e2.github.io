@@ -3,7 +3,13 @@
 
 <head>
     <title>Wifi Stats Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#222">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#222">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#222">
     <link rel="icon" type="image/png" href="logo.png" sizes="16x16 32x32" />
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
     <style>
@@ -11,13 +17,14 @@
             background-color: #111;
             color: #aaa;
             margin: 0;
+            padding-bottom: 10vh;
             font-family: "Rubik", sans-serif;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 90vh;
         }
 
         h1 {
@@ -89,7 +96,7 @@
         #picker {
             margin: 2em;
         }
-        
+
         #output {
             border-radius: 3px;
             padding: 10px 20px;
@@ -98,9 +105,11 @@
             background-color: #333;
             line-height: 1.8;
         }
+
         strong {
-          color: #eee;
+            color: #eee;
         }
+
         .colon {
             font-size: 1.6em;
             font-weight: bold;
