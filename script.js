@@ -63,6 +63,14 @@ fetch('building_list.json')
             node.appendChild(txtnode)
             document.getElementById('building').appendChild(node)
         }
+        let now = new Date();
+        let wk = (now.getDay() + 6) % 7;
+        let hr = now.getHours();
+        let mn = now.getMinutes();
+        mn = Math.floor(mn / 10);
+        document.getElementById('weekday').value = wk;
+        document.getElementById('hour').value = hr;
+        document.getElementById('minute').value = mn;
     }
 );
 
