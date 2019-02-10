@@ -1,10 +1,11 @@
 
 var addOpts = function(id, num, labels) {
     for (let i = 0; i < num; i++) {
-        let node = document.createElement('option')
-        let txtnode = document.createTextNode(labels[i])
-        node.appendChild(txtnode)
-        document.getElementById(id).appendChild(node)
+        let node = document.createElement('option');
+        node.value = i;
+        let txtnode = document.createTextNode(labels[i]);
+        node.appendChild(txtnode);
+        document.getElementById(id).appendChild(node);
     }
 };
 addOpts('weekday', 7, [
