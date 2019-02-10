@@ -69,7 +69,7 @@ def indextotime(index):
 timeranks = {}
 import itertools as it
 for build,counts in buildings.items():
-    sortedtimes = enumerate(sorted(enumerate(counts), key=lambda item: (item[1],item[0])))
+    sortedtimes = enumerate(sorted(enumerate(counts), key=lambda item: (item[1],-item[0])))
     timeranks[build] = [(newrank,times) for newrank,(_,times) in sorted(sortedtimes, key=lambda item: item[1])]
 
 for index in range(7*24*6):
