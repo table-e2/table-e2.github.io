@@ -23,7 +23,7 @@ collabels = [
 ]
 
 import sys
-while True:
+for _ in range(1000):
     row = sys.stdin.readline()
     if not row:
         break
