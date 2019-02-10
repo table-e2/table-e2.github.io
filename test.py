@@ -37,7 +37,7 @@ def pweek(days):
 import sys
 import itertools as it
 for counter in it.count(1):
-    if counter % 1000 == 0:
+    if counter % 10000 == 0:
         pweek(days)
     row = sys.stdin.readline()
     if not row:
