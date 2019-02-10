@@ -5,7 +5,6 @@
 import csv
 from datetime import datetime as dt
 
-days = [0] * 7
 collabels = [
     'Num',
     'UFL',
@@ -30,13 +29,15 @@ weekdays = [
     'Sat',
     'Sun'
 ]
-def pweek(days, counter):
-    print(f'Checked {counter} rows.')
-    for weekday,day in zip(weekdays,days):
-        print(f'{weekday}: {day}')
+def plabel(labels, data):
+    for weekday,day in zip(labels,data):
+        print(f'{weekday} : {day}')
 
 import sys
 import itertools as it
+days = [0] * 7
+hours = [0] * 24
+minutes = [0] * 6
 for counter in it.count(1):
     if counter % 10000 == 0:
         print(f'Checked {counter} lines.   ', end='\r')
@@ -57,6 +58,17 @@ for counter in it.count(1):
         items['Minute'],
     )
     dayofweek = rowtime.weekday()
-    days[dayofweek] += items['Total_Count']
+    hour = rowtime.hour
+    minute = rowtime.minute // 10
+    total = items['Total_Count']
+    days[dayofweek] += total
+    hours[hour] += total
+    minutes[minute] += total
 
-pweek(days, counter)
+print(f'Checked {counter} lines.')
+
+plabel(weekdays, days)
+print()
+plabel([f'{n}:00' for n in range(24)], hours)
+print()
+plabel([f'0:{n}0' for n in range(6)], minutes)
