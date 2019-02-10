@@ -69,6 +69,6 @@ print(f'Checked {counter} lines.')
 
 plabel(weekdays, days)
 print()
-plabel([f'{n}:00' for n in range(24)], hours)
+plabel([f'{n:02}:00' for n in range(24)], hours)
 print()
 plabel([f'0:{n}0' for n in range(6)], minutes)
