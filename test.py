@@ -21,25 +21,27 @@ collabels = [
     'SomeNum',
     'Zero'
 ]
-with open('wifisample.csv') as samplefile:
-    sample = csv.reader(samplefile)
-    for row in sample:
-        items = {}
-        for label,col in zip(collabels,row):
-            try:
-                items[label] = int(col)
-            except ValueError:
-                items[label] = col
-                
-        rowtime = dt(
-            items['Year'],
-            items['Month'],
-            items['Day'],
-            items['Hour'],
-            items['Minute'],
-        )
-        dayofweek = rowtime.weekday()
-        days[dayofweek] += items['Total_Count']
+
+import sys
+while True:
+    row = sys.stdin.readline()
+    if not row:
+        break
+    items = {}
+    for label,col in zip(collabels,row.split(',')):
+        try:
+            items[label] = int(col)
+        except ValueError:
+            items[label] = col
+    rowtime = dt(
+        items['Year'],
+        items['Month'],
+        items['Day'],
+        items['Hour'],
+        items['Minute'],
+    )
+    dayofweek = rowtime.weekday()
+    days[dayofweek] += items['Total_Count']
 
 weekdays = [
     'Mon',
