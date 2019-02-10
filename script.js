@@ -83,6 +83,14 @@ fetch('data.json')
             index += parseInt(minute);
             // result = document.createTextNode(data[bldg][index]);
             document.getElementById('result').innerHTML = data[bldg][index];
+            let sum = 0;
+            for (count of data[bldg]) {
+                sum += count;
+            }
+            let average = sum / data[bldg].length;
+            let factor = data[bldg][index] / average;
+            document.getElementById('deets').innerHTML = 'This building usually has ' + average.toFixed(1) + 
+                ' devices. It is ' + factor.toFixed(2) + ' times average.';
         };
     });
     
