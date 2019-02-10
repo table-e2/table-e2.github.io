@@ -65,3 +65,8 @@ def indextotime(index):
     hour = (index // 6) % 24
     day = index // (24 * 6)
     return day, hour, minute * 10
+
+import json
+
+with open('data.json', 'wb') as datafile:
+    json.dump(buildings, datafile)
