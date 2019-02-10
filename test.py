@@ -30,8 +30,8 @@ weekdays = [
     'Sun'
 ]
 def plabel(labels, data):
-    for weekday,day in zip(labels,data):
-        print(f'{weekday} : {day}')
+    for label,d in zip(labels,data):
+        print(f'{label} : {d:,}')
 
 import sys
 import itertools as it
