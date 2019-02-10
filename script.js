@@ -40,8 +40,8 @@ fetch('data.json')
             index += parseInt(weekday) * 24 * 6;
             index += parseInt(hour) * 6;
             index += parseInt(minute);
-            result = document.createTextNode(data[bldg][index]);
-            document.getElementById('result').replaceWith(result);
+            // result = document.createTextNode(data[bldg][index]);
+            document.getElementById('result').innerHTML = data[bldg][index];
         };
-    })
+    });
     
