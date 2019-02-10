@@ -78,7 +78,7 @@ fetch('data.json')
     .then(function(response) {
         return response.json();
     }).then(function(data) {
-        document.getElementById('result').innerHTML = '';
+        document.getElementById('result').innerHTML = 'Loaded';
         
         let button = document.getElementById('submit')
         button.onclick = function() {
@@ -94,15 +94,42 @@ fetch('data.json')
             // result = document.createTextNode(data[bldg][index]);
             let days = 249 / 7;
             let devices = (data[bldg][index] / days).toFixed(1);
-            document.getElementById('result').innerHTML = 'Historical devices: ' + devices;
+            document.getElementById('result').innerHTML = 'Average for this time of the week: <strong>' + devices + '</strong>';
             let sum = 0;
             for (count of data[bldg]) {
                 sum += count;
             }
             let average = sum / data[bldg].length / days;
-            let factor = devices / average;
-            document.getElementById('deets').innerHTML = 'This building usually has ' + average.toFixed(1) + 
-                ' devices. It is ' + factor.toFixed(2) + ' times average.';
+            let baseurl = 'https://ucd-pi-iis.ou.ad3.ucdavis.edu/piwebapi/elements/'
+            let url = baseurl + 'E0bgZy4oKQ9kiBiZJTW7eugwBjj8KdFl6BGUWQBQVpcmaQVVRJTC1BRlxSRVNUIFBPU1RTIFRPIFBJXFJFU1QgUE9TVFMgVE8gUElcVUZMXFVGTFxXSUZJIEFDQ0VTUyBQT0lOVFM/elements'
+            fetch(url).then(function(resp) {
+                return resp.json();
+            }).then(function(data) {
+                newurl = '';
+                for (key of data['Items']) {
+                    if (key['Name'] == bldg) {
+                        newurl = key['Links']['RecordedData'] + '?startTime=-1h' + '&selectedFields=Items.Items.Value';
+                        break;
+                    }
+                }
+                return fetch(newurl)
+            }).then(function(resp) {
+                return resp.json();
+            }).then(function(data) {
+                let len = data['Items'][0]['Items'].length;
+                let last = data['Items'][0]['Items'][len - 1]['Value']
+                if (isNaN(last)) {
+                    console.log('Did not find value');
+                    return 0;
+                } else {
+                    return parseInt(last);
+                }
+            }).then(function(last) {
+                let node = 'Current devices connected: <strong>' + last + '</strong>';
+                document.getElementById('current').innerHTML = node;
+                let factor = (last / devices).toFixed(2);
+                document.getElementById('deets').innerHTML = 'It is <strong>' + factor + '</strong> times the usual for this time of the week.' +
+                '<br>This building averages <strong>' + average.toFixed(1) + '</strong> devices overall.'
+            });
         };
     });
-    
