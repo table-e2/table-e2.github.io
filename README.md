@@ -98,12 +98,7 @@ Weekday - By Day of the Week
 23:00 : 4,278,256
 ```
 
-
-<a href="https://www.youtube.com/watch?v=bjtbVyUBv4w">
-  <img src="https://imgur.com/TuAu770.jpg" alt="thumb" style="height: 1px">
-</a>
-
-
+[<img src="http://img.youtube.com/bjtbVyUBv4w/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="thumb" width="240" height="180" border="10" />](http://www.youtube.com/watch?v=bjtbVyUBv4w)
 
 ## Notes
 
