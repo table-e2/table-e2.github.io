@@ -100,7 +100,7 @@ Weekday - By Day of the Week
 
 ## Notes
 
-The current device counts will likely stop being available as API access was granted specifically for HackDavis 2019. If the API is unavailable, they will show as zero.
+The current device counts will likely stop being available as API access was granted specifically for HackDavis 2019. If the API is unavailable, they will show as `?`.
 
 If you are viewing this over one week later, the phone service may also be inactive.
 

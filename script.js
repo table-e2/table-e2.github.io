@@ -130,6 +130,13 @@ fetch('data.json')
                 let factor = (last / devices).toFixed(2);
                 document.getElementById('deets').innerHTML = 'It is <strong>' + factor + '</strong> times the usual for this time of the week.' +
                 '<br>This building averages <strong>' + average.toFixed(1) + '</strong> devices overall.'
+            }).catch(function(reason) {
+                let last = '?';
+                let factor = '?'
+                let node = 'Current devices connected: <strong>' + last + '</strong>';
+                document.getElementById('current').innerHTML = node;
+                document.getElementById('deets').innerHTML = 'It is <strong>' + factor + '</strong> times the usual for this time of the week.' +
+                '<br>This building averages <strong>' + average.toFixed(1) + '</strong> devices overall.'
             });
         };
     });
