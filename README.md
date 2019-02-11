@@ -18,7 +18,7 @@ With more development, the page could show more detailed stats, such as graphs o
 
 We could also monitor information like what is shown on the site and send alerts to the relevant technicians when there are anomalies, which could signal either technical (e.g. power outage, broken cable) or demographic (e.g. identify places of crowding) problems.
 
-Combined with surveys of other statistics, like building occupancy or weather, we could create approximations of other statistics that are harder or more expensive to measure in real time.
+Combined with surveys of other statistics, like building occupancy or weather, we could create approximations of other statistics that are harder or more expensive to measure in real time. For example, we could check how the number of wifi connections on a rainy day correlates to occupancy of the MU, and use wifi connection numbers to approximate how many seats are available on other rainy days.
 
 ## Technical details
 
