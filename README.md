@@ -10,6 +10,16 @@ You can also request data such as most popular buildings and historical summarie
 
 ![Screenshot](images/screenshot.png)
 
+## Applications
+
+Wifi Stats Checker is great for informing anyone curious about UC Davis wifi statistics, but can also be used to check overall popularity and how busy buildings are normally compared to now. Students can use the relationship between current and historical data to find quiet places to study.
+
+With more development, the page could show more detailed stats, such as graphs of any time period or comparisons between different buildings.
+
+We could also monitor information like what is shown on the site and send alerts to the relevant technicians when there are anomalies, which could signal either technical (e.g. power outage, broken cable) or demographic (e.g. identify places of crowding) problems.
+
+Combined with surveys of other statistics, like building occupancy or weather, we could create approximations of other statistics that are harder or more expensive to measure in real time.
+
 ## Technical details
 
 The current WiFi data comes from OSIsoft's PI System API. This gives the number of connected devices each ten minutes.
