@@ -98,6 +98,13 @@ Weekday - By Day of the Week
 23:00 : 4,278,256
 ```
 
+
+<a href="https://www.youtube.com/watch?v=bjtbVyUBv4w">
+  <img src="https://imgur.com/TuAu770.jpg" alt="thumb" style="height: 1px">
+</a>
+
+
+
 ## Notes
 
 The current device counts will likely stop being available as API access was granted specifically for HackDavis 2019. If the API is unavailable, they will show as `?`.
