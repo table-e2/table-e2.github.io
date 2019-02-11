@@ -100,7 +100,7 @@ Weekday - By Day of the Week
 
 ## Phone demonstration
 
-[<img src="http://img.youtube.com/vi/bjtbVyUBv4w/0.jpg" alt="thumb" width="270" height="480" border="10" style="object-fit:cover"/>](http://www.youtube.com/watch?v=bjtbVyUBv4w)
+[<img src="http://img.youtube.com/vi/bjtbVyUBv4w/0.jpg" alt="thumb" height="480" border="10"/>](http://www.youtube.com/watch?v=bjtbVyUBv4w)
 
 ## Notes
 
