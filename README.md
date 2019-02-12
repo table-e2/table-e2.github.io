@@ -103,8 +103,6 @@ Weekday - By Day of the Week
 Click to watch on YouTube:  
 [<img src="images/thumbnail.jpg" alt="thumb" height="480" />](http://www.youtube.com/watch?v=bjtbVyUBv4w)
 
-<iframe width="1903" height="778" src="https://www.youtube.com/embed/bjtbVyUBv4w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## Notes
 
 The current device counts will likely stop being available as API access was granted specifically for HackDavis 2019. If the API is unavailable, they will show as `?`.
