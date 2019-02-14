@@ -112,3 +112,14 @@ strong {
     margin: 4em 10px 1em;
     max-width: 36em;
 }
+
+a {
+    color: #aaf;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: #aac;
+}
