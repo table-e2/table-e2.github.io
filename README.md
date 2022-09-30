@@ -6,8 +6,7 @@ This project was created by [us](https://github.com/table-e2/table-e2.github.io/
 
 Using this site, you can check current wifi usage at buildings across UC Davis and compare it to historical data. At the moment, the historical data covers the last 7 months. Each building has data for each 10-minute interval of the week, which should accurately reflect average usage for most cases.
 
-You can also request data such as most popular buildings and historical summaries using the text message bot at **(415) 200-3321.**
-
+Previously, you could request data such as the most popular buildings and historical summaries using the text message bot. This service is no longer available.
 ![Screenshot](images/screenshot.png)
 
 ## Applications
